@@ -18,7 +18,7 @@ jobs:
         uses: P3TERX/ssh2actions@v1.0.0
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
       - name: Mirror the Github organization repos
-        uses: Yikun/hub-mirror-action@master
+        uses: Yikun/hub-mirror-action@v1.1
         with:
           src: github/immortalwrt
           dst: github/mopenwrt
@@ -28,4 +28,4 @@ jobs:
           force_update: true
           # debug: true
           mappings: "luci=>immortalwrt-luci,packages=>immortalwrt-packages"
-          # black_list: ""
+          white_list: "luci,packages,immortalwrt"
