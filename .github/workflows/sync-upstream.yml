@@ -26,7 +26,7 @@ jobs:
           dst_token: ${{ secrets.PERSONAL_TOKEN }}
           account_type: org
           force_update: false
-          # debug: true
+          debug: true
           mappings: "luci=>immortalwrt-luci,packages=>immortalwrt-packages"
           white_list: "luci,packages,immortalwrt"
       - name: Mirror the Github coolsnowwolf repos
