@@ -25,7 +25,7 @@ jobs:
           dst_key: ${{ secrets.GIT_KEY }}
           dst_token: ${{ secrets.PERSONAL_TOKEN }}
           account_type: org
-          force_update: true
-          # debug: true
+          force_update: false
+          debug: true
           mappings: "luci=>immortalwrt-luci,packages=>immortalwrt-packages"
           white_list: "luci,packages,immortalwrt"
