@@ -36,8 +36,8 @@ jobs:
           dst: github/mopenwrt
           dst_key: ${{ secrets.GIT_KEY }}
           dst_token: ${{ secrets.PERSONAL_TOKEN }}
-          account_type: org
+          account_type: user
           force_update: false
-          # debug: true
+          debug: true
           mappings: "lede=>lean-lede"
           white_list: "lede"
