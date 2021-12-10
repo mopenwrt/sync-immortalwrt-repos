@@ -1,6 +1,9 @@
 name: Sync Repos
 
 on:
+  push:
+    paths:
+    - '.github/workflows/**'
   schedule:
     - cron: '5 4,16 * * *' # at 4:05 AM and 4:05 PM everyday
   workflow_dispatch: # on button click
