@@ -68,9 +68,61 @@ jobs:
           src_account_type: user  # the src account type
           dst_account_type: org  # the dst account type
           force_update: false
-          debug: true
+          #debug: true
           mappings: "openwrt-packages=>kiddin9-openwrt-packages,my-packages=>kiddin9-my-packages"
           static_list: "openwrt-packages,my-packages"
+      - name: Mirror the Github QinLong-doc repos
+        uses: snowyu/hub-mirror-action@master
+        with:
+          src: github/Oreomeow
+          dst: github/mopenwrt
+          dst_key: ${{ secrets.GIT_KEY }}
+          dst_token: ${{ secrets.PERSONAL_TOKEN }}
+          src_account_type: user  # the src account type
+          dst_account_type: org  # the dst account type
+          force_update: false
+          #debug: true
+          mappings: "vip=>qinglong-oreomeow-vip"
+          static_list: "vip"
+      - name: Mirror the Github QinLong repos
+        uses: snowyu/hub-mirror-action@master
+        with:
+          src: github/whyour
+          dst: github/mopenwrt
+          dst_key: ${{ secrets.GIT_KEY }}
+          dst_token: ${{ secrets.PERSONAL_TOKEN }}
+          src_account_type: user  # the src account type
+          dst_account_type: org  # the dst account type
+          force_update: false
+          #debug: true
+          mappings: "qinglong=>qinglong"
+          static_list: "qinglong"
+      - name: Mirror the Github QinLong-fake repos
+        uses: snowyu/hub-mirror-action@master
+        with:
+          src: github/shufflewzc
+          dst: github/mopenwrt
+          dst_key: ${{ secrets.GIT_KEY }}
+          dst_token: ${{ secrets.PERSONAL_TOKEN }}
+          src_account_type: user  # the src account type
+          dst_account_type: org  # the dst account type
+          force_update: false
+          #debug: true
+          mappings: "faker=>qinglong-faker,faker2=>qinglong-faker2,faker3=>qinglong-faker3,nvjdc=>qinglong-nvjdc,smeik2221backup=>qinglong-smeik2221backup"
+          static_list: "faker,faker2,faker3,nvjdc,smeik2221backup"
+      - name: Mirror the Github QinLong-denpendency repos
+        uses: snowyu/hub-mirror-action@master
+        with:
+          src: github/FlechazoPh
+          dst: github/mopenwrt
+          dst_key: ${{ secrets.GIT_KEY }}
+          dst_token: ${{ secrets.PERSONAL_TOKEN }}
+          src_account_type: user  # the src account type
+          dst_account_type: org  # the dst account type
+          force_update: false
+          #debug: true
+          mappings: "QLDependency=>qinglong-dependency"
+          static_list: "QLDependency"
           
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main
