@@ -26,7 +26,7 @@ jobs:
           dst_token: ${{ secrets.PERSONAL_TOKEN }}
           account_type: org
           force_update: false
-          debug: true
+          #debug: true
           mappings: "luci=>immortalwrt-luci,packages=>immortalwrt-packages"
           white_list: "luci,packages,immortalwrt"
       - name: Mirror the Github coolsnowwolf repos
@@ -40,5 +40,24 @@ jobs:
           dst_account_type: org  # the dst account type
           force_update: false
           debug: true
-          mappings: "lede=>lean-lede"
+          mappings: "lede=>lean-openwrt"
           white_list: "lede"
+      - name: Mirror the Github Lienol repos
+        uses: snowyu/hub-mirror-action@master
+        with:
+          src: github/Lienol
+          dst: github/mopenwrt
+          dst_key: ${{ secrets.GIT_KEY }}
+          dst_token: ${{ secrets.PERSONAL_TOKEN }}
+          src_account_type: user  # the src account type
+          dst_account_type: org  # the dst account type
+          force_update: false
+          debug: true
+          mappings: "openwrt=>lienol-openwrt"
+          white_list: "openwrt"
+          
+      - name: Delete workflow runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 1
