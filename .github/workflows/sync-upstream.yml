@@ -42,7 +42,7 @@ jobs:
           src_account_type: user  # the src account type
           dst_account_type: org  # the dst account type
           force_update: false
-          debug: true
+          #debug: true
           mappings: "lede=>lean-openwrt"
           white_list: "lede"
       - name: Mirror the Github Lienol repos
@@ -56,8 +56,8 @@ jobs:
           dst_account_type: org  # the dst account type
           force_update: false
           debug: true
-          mappings: "openwrt=>lienol-openwrt"
-          white_list: "openwrt"
+          mappings: "openwrt=>lienol-openwrt,openwrt-package=>lienol-openwrt-package"
+          static_list: "openwrt,openwrt-package"
           
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main
