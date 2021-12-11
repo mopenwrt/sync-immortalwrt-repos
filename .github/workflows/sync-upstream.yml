@@ -67,7 +67,7 @@ jobs:
           dst_token: ${{ secrets.PERSONAL_TOKEN }}
           src_account_type: user  # the src account type
           dst_account_type: org  # the dst account type
-          force_update: false
+          force_update: true
           #debug: true
           mappings: "openwrt-packages=>kiddin9-openwrt-packages,my-packages=>kiddin9-my-packages"
           static_list: "openwrt-packages,my-packages"
