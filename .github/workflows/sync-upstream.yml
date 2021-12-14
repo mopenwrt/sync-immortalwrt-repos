@@ -5,7 +5,7 @@ on:
     paths:
     - '.github/workflows/**'
   schedule:
-    - cron: '5 4,16 * * *' # at 4:05 AM and 4:05 PM everyday
+    - cron: '5 4 * * *' # at 4:05 AM everyday
   workflow_dispatch: # on button click
     inputs:
       ssh:
